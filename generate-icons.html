@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор минималистичных иконок</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 40px;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #888;
+            margin-bottom: 50px;
+        }
+        .icon-preview {
+            margin: 30px auto;
+            background: #1a1a1a;
+            border-radius: 25%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+        }
+        .icon-192 {
+            width: 192px;
+            height: 192px;
+        }
+        .icon-512 {
+            width: 512px;
+            height: 512px;
+        }
+        button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #ff7700;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
+        }
+        .instructions {
+            max-width: 600px;
+            margin: 60px auto;
+            text-align: left;
+            line-height: 1.8;
+            color: #ccc;
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+        .instructions h3 {
+            color: #ff6600;
+            margin-top: 0;
+        }
+        code {
+            background: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #ff6600;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 60px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>💪 Минималистичные иконки</h1>
+    <p class="subtitle">Черно-белый дизайн с оранжевым акцентом</p>
+
+    <div class="section">
+        <h2>Иконка 192×192</h2>
+        <canvas id="canvas192" class="icon-preview icon-192" width="192" height="192"></canvas>
+        <br><br>
+        <button onclick="downloadIcon(192)">⬇ Скачать icon-192.png</button>
+    </div>
+
+    <div class="section">
+        <h2>Иконка 512×512</h2>
+        <canvas id="canvas512" class="icon-preview icon-512" width="512" height="512"></canvas>
+        <br><br>
+        <button onclick="downloadIcon(512)">⬇ Скачать icon-512.png</button>
+    </div>
+
+    <div class="instructions">
+        <h3>📋 Инструкция:</h3>
+        <ol>
+            <li>Нажми обе кнопки выше чтобы скачать иконки</li>
+            <li>Положи <code>icon-192.png</code> и <code>icon-512.png</code> в папку <code>Github</code></li>
+            <li>Загрузи их на GitHub (Add file → Upload files)</li>
+            <li>Готово! ✨</li>
+        </ol>
+    </div>
+
+    <script>
+        // Рисуем иконки при загрузке
+        window.onload = function() {
+            drawIcon(192);
+            drawIcon(512);
+        };
+
+        function drawIcon(size) {
+            const canvas = document.getElementById('canvas' + size);
+            const ctx = canvas.getContext('2d');
+
+            // Фон - чёрный
+            ctx.fillStyle = '#1a1a1a';
+
+            // Закругленные углы
+            const radius = size * 0.25;
+            ctx.beginPath();
+            ctx.moveTo(radius, 0);
+            ctx.lineTo(size - radius, 0);
+            ctx.quadraticCurveTo(size, 0, size, radius);
+            ctx.lineTo(size, size - radius);
+            ctx.quadraticCurveTo(size, size, size - radius, size);
+            ctx.lineTo(radius, size);
+            ctx.quadraticCurveTo(0, size, 0, size - radius);
+            ctx.lineTo(0, radius);
+            ctx.quadraticCurveTo(0, 0, radius, 0);
+            ctx.closePath();
+            ctx.fill();
+
+            // Тонкая граница
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = size * 0.005;
+            ctx.stroke();
+
+            // Рисуем минималистичную гантель
+            const centerX = size / 2;
+            const centerY = size / 2;
+            const barWidth = size * 0.5;
+            const barHeight = size * 0.04;
+            const plateWidth = size * 0.08;
+            const plateHeight = size * 0.25;
+
+            ctx.fillStyle = '#ff6600'; // Оранжевый
+
+            // Гриф (центр)
+            ctx.fillRect(
+                centerX - barWidth / 2,
+                centerY - barHeight / 2,
+                barWidth,
+                barHeight
+            );
+
+            // Левый блин
+            ctx.fillRect(
+                centerX - barWidth / 2 - plateWidth,
+                centerY - plateHeight / 2,
+                plateWidth,
+                plateHeight
+            );
+
+            // Правый блин
+            ctx.fillRect(
+                centerX + barWidth / 2,
+                centerY - plateHeight / 2,
+                plateWidth,
+                plateHeight
+            );
+
+            // Дополнительные блины (меньше)
+            const smallPlateWidth = size * 0.06;
+            const smallPlateHeight = size * 0.2;
+
+            ctx.globalAlpha = 0.7;
+
+            // Левый маленький
+            ctx.fillRect(
+                centerX - barWidth / 2 - plateWidth - smallPlateWidth,
+                centerY - smallPlateHeight / 2,
+                smallPlateWidth,
+                smallPlateHeight
+            );
+
+            // Правый маленький
+            ctx.fillRect(
+                centerX + barWidth / 2 + plateWidth,
+                centerY - smallPlateHeight / 2,
+                smallPlateWidth,
+                smallPlateHeight
+            );
+
+            ctx.globalAlpha = 1.0;
+        }
+
+        function downloadIcon(size) {
+            const canvas = document.getElementById('canvas' + size);
+
+            canvas.toBlob(blob => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `icon-${size}.png`;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+    </script>
+</body>
+</html>

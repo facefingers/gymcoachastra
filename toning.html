@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренировки на Тонус и Жиросжигание</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 { color: #FF6B9D; margin-bottom: 30px; text-align: center; }
+        h2 { color: #FF6B9D; margin-top: 50px; margin-bottom: 20px; border-bottom: 2px solid #FF6B9D; padding-bottom: 10px; }
+        h3 { color: var(--primary); margin-top: 30px; margin-bottom: 15px; }
+        .hero-box {
+            background: linear-gradient(135deg, #FF6B9D 0%, #FF8FAB 100%);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        .workout-box {
+            background: var(--bg-card);
+            border: 2px solid #FF6B9D;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        .workout-box h3 {
+            color: #FF6B9D;
+            margin-top: 0;
+        }
+        .info-box {
+            background: rgba(255, 107, 157, 0.1);
+            border-left: 4px solid #FF6B9D;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .warning-box {
+            background: rgba(255, 152, 0, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: var(--bg-card);
+            color: #FF6B9D;
+            font-weight: bold;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        .checklist {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .checklist li {
+            list-style: none;
+            padding-left: 30px;
+            position: relative;
+        }
+        .checklist li:before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            color: #FF6B9D;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="btn btn-secondary back-btn">← Назад к приложению</a>
+
+    <h1>🔥 Тренировки на Тонус и Жиросжигание</h1>
+
+    <div class="hero-box">
+        Программа 4-6: Подтянутое тело + Меньше живот + Красивые руки и ноги
+    </div>
+
+    <h2>🎯 Для кого эти тренировки?</h2>
+
+    <div class="info-box">
+        <strong>✅ Твоя цель:</strong>
+        <ul>
+            <li>Подтянутое, спортивное тело (не массивное)</li>
+            <li>Убрать живот</li>
+            <li>Красивые руки (особенно задняя часть - трицепс)</li>
+            <li>Красивые ноги и ягодицы</li>
+        </ul>
+
+        <strong>✅ Твои предпочтения:</strong>
+        <ul>
+            <li>Любишь тренажеры</li>
+            <li>НЕ любишь работать с собственным весом на коврике</li>
+            <li>Хочешь быстрые тренировки (45-60 мин)</li>
+        </ul>
+    </div>
+
+    <h2>📋 Три новые тренировки</h2>
+
+    <div class="workout-box">
+        <h3>Тренировка 4: Верх тела + Жиросжигание (50-60 мин)</h3>
+        <p><strong>Акцент:</strong> Подтянутые руки и плечи</p>
+
+        <strong>Упражнения:</strong>
+        <ol>
+            <li>Тяга горизонтального блока - 3×12-15 (спина)</li>
+            <li>Жим на плечи - 3×12-15</li>
+            <li><strong>Разгибание рук на блоке - 4×15</strong> (ВАЖНО для красивых рук!)</li>
+            <li>Сгибание рук в тренажере - 3×12-15</li>
+            <li>Разведение рук (задняя дельта) - 3×15</li>
+            <li>Скручивания на блоке - 3×15-20 (пресс)</li>
+            <li><strong>Кардио интервалы - 5 минут</strong> (30 сек быстро / 30 сек медленно)</li>
+        </ol>
+
+        <div class="info-box" style="margin-top: 15px;">
+            <strong>💡 Почему 4 подхода на трицепс?</strong><br>
+            Трицепс = 2/3 объёма руки. Для подтянутых рук важнее трицепс, чем бицепс!
+        </div>
+    </div>
+
+    <div class="workout-box">
+        <h3>Тренировка 5: Ноги и Ягодицы - Тонус (55-65 мин)</h3>
+        <p><strong>Акцент:</strong> Подтянутые ноги БЕЗ перекачки</p>
+
+        <strong>Упражнения:</strong>
+        <ol>
+            <li>Ягодичный мостик - 4×15 (легче вес, больше повторений)</li>
+            <li>Отведение ног - 3×15-20 (ягодицы)</li>
+            <li>Сведение ног - 3×15-20 (внутренняя часть бедра)</li>
+            <li>Разгибание ног - 3×15 (квадрицепс)</li>
+            <li>Сгибание ног - 3×15 (бицепс бедра)</li>
+            <li>Жим одной ногой - 3×12-15 (каждой ногой)</li>
+            <li><strong>Кардио интервалы - 5 минут</strong> (степпер)</li>
+        </ol>
+
+        <div class="info-box" style="margin-top: 15px;">
+            <strong>💡 Отличия от тяжелой тренировки ног:</strong><br>
+            Легче веса (-30-40%) + больше повторений (15-20) + больше изоляции
+        </div>
+    </div>
+
+    <div class="workout-box">
+        <h3>Тренировка 6: Круговая на всё тело (45-55 мин)</h3>
+        <p><strong>Акцент:</strong> Максимальное жиросжигание</p>
+        <p><strong>Формат:</strong> 3 круга, минимальный отдых между упражнениями!</p>
+
+        <strong>Упражнения в одном круге:</strong>
+        <ol>
+            <li>Жим в тренажере - 12-15 раз</li>
+            <li>Тяга вертикального блока - 12-15 раз</li>
+            <li>Жим ногами - 15 раз</li>
+            <li>Жим на плечи - 12-15 раз</li>
+            <li>Скручивания на блоке - 20 раз</li>
+        </ol>
+
+        <p><strong>Делаешь 3 круга:</strong> 1 круг → отдых 60-90 сек → 2 круг → отдых 60-90 сек → 3 круг</p>
+        <p><strong>В конце:</strong> 10 минут кардио (велосипед/эллипсоид)</p>
+
+        <div class="info-box" style="margin-top: 15px;">
+            <strong>💡 Почему круговая работает?</strong><br>
+            Высокий пульс на протяжении всей тренировки = больше калорий + общий тонус
+        </div>
+    </div>
+
+    <h2>⚠️ ВАЖНО: Про живот</h2>
+
+    <div class="warning-box">
+        <h3 style="margin-top: 0;">Мифы:</h3>
+
+        <p><strong>❌ МИФ 1:</strong> "Качай пресс и живот уйдет"</p>
+        <p><strong>ПРАВДА:</strong> Упражнения на пресс НЕ убирают жир с живота. Пресс укрепляется ПОД слоем жира. Жир уходит только при дефиците калорий.</p>
+
+        <p><strong>❌ МИФ 2:</strong> "Локальное жиросжигание существует"</p>
+        <p><strong>ПРАВДА:</strong> Тело сжигает жир равномерно по всему телу. Нельзя убрать жир только с живота.</p>
+    </div>
+
+    <div class="info-box">
+        <h3 style="margin-top: 0;">✅ Формула убрать живот:</h3>
+
+        <p><strong>70% - Питание</strong></p>
+        <ul>
+            <li>Дефицит калорий -300-500 ккал</li>
+            <li>Белок 1.8-2.2 г на кг веса</li>
+            <li>Терпение (8-12 недель минимум)</li>
+        </ul>
+
+        <p><strong>20% - Кардио</strong></p>
+        <ul>
+            <li>3-4 раза в неделю по 20-30 мин</li>
+            <li>Интервалы эффективнее чем монотонное</li>
+            <li>Важен пульс 60-70% от максимума</li>
+        </ul>
+
+        <p><strong>10% - Силовые</strong></p>
+        <ul>
+            <li>Сохраняют мышцы во время диеты</li>
+            <li>Ускоряют метаболизм</li>
+            <li>Формируют тонус</li>
+        </ul>
+    </div>
+
+    <h2>📊 Отличия от тренировок 1-3</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Параметр</th>
+                <th>Тренировки 1-3 (Масса)</th>
+                <th>Тренировки 4-6 (Тонус)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Цель</strong></td>
+                <td>Набор массы, сила</td>
+                <td>Тонус, жиросжигание</td>
+            </tr>
+            <tr>
+                <td><strong>Веса</strong></td>
+                <td>Тяжелые (80-85% от макс)</td>
+                <td>Средние (60-70% от макс)</td>
+            </tr>
+            <tr>
+                <td><strong>Повторения</strong></td>
+                <td>8-10</td>
+                <td>12-20</td>
+            </tr>
+            <tr>
+                <td><strong>Отдых</strong></td>
+                <td>60-90 сек</td>
+                <td>30-60 сек</td>
+            </tr>
+            <tr>
+                <td><strong>Кардио</strong></td>
+                <td>8 мин разминка</td>
+                <td>8 мин + 5-10 мин интервалы</td>
+            </tr>
+            <tr>
+                <td><strong>Время</strong></td>
+                <td>60-120 мин</td>
+                <td>45-65 мин</td>
+            </tr>
+            <tr>
+                <td><strong>Питание</strong></td>
+                <td>Профицит калорий</td>
+                <td>Дефицит калорий</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>💡 Советы для максимального эффекта</h2>
+
+    <div class="workout-box">
+        <h3>1. Кардио интервалы</h3>
+        <p><strong>Почему интервалы, а не монотонное кардио?</strong></p>
+        <ul>
+            <li>Сжигают больше калорий за меньшее время</li>
+            <li>Сохраняют мышцы (монотонное кардио может сжечь мышцы)</li>
+            <li>Ускоряют метаболизм на 24-48 часов</li>
+        </ul>
+
+        <p><strong>Как делать:</strong></p>
+        <ul>
+            <li>30 секунд БЫСТРО (пульс 80-85%)</li>
+            <li>30 секунд МЕДЛЕННО (пульс 60%)</li>
+            <li>Повторять 5-10 минут</li>
+        </ul>
+    </div>
+
+    <div class="workout-box">
+        <h3>2. Легкие веса vs Тяжелые</h3>
+        <p><strong>Почему легкие веса для тонуса?</strong></p>
+        <ul>
+            <li>Больше повторений = больше времени под нагрузкой</li>
+            <li>Больше калорий сжигается</li>
+            <li>Меньше риск "перекачаться"</li>
+            <li>Лучше контроль техники</li>
+        </ul>
+
+        <p><strong>Как выбрать вес?</strong></p>
+        <ul>
+            <li>Должна сделать 12-15 повторений с усилием</li>
+            <li>Последние 2-3 повторения тяжело, но техника не страдает</li>
+            <li>Если легко делаешь 20+ повторений - увеличь вес</li>
+        </ul>
+    </div>
+
+    <h2>🎯 Ожидаемый результат</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Срок</th>
+                <th>Результат</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Через 4 недели</strong></td>
+                <td>
+                    • Уменьшение объемов на 2-4 см<br>
+                    • Больше энергии<br>
+                    • Мышцы становятся более заметными
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Через 8 недель</strong></td>
+                <td>
+                    • Видимый результат на фото<br>
+                    • -3-5 кг жира<br>
+                    • Подтянутые руки и ноги
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Через 12 недель</strong></td>
+                <td>
+                    • Трансформация тела<br>
+                    • -6-8 кг жира<br>
+                    • Красивый рельеф<br>
+                    • Живот значительно меньше
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>✅ Чеклист для успеха</h2>
+
+    <div class="checklist">
+        <strong>Каждый день:</strong>
+        <ul>
+            <li>Ешь достаточно белка (1.8-2.2г на кг)</li>
+            <li>Дефицит калорий -300-500</li>
+            <li>Пей 2-3 литра воды</li>
+            <li>Спи 7-9 часов</li>
+        </ul>
+
+        <strong>Каждую тренировку:</strong>
+        <ul>
+            <li>8 минут кардио разминка</li>
+            <li>Записывай веса и повторения в приложении</li>
+            <li>Кардио интервалы в конце</li>
+            <li>Растяжка 5-10 минут</li>
+        </ul>
+
+        <strong>Каждую неделю:</strong>
+        <ul>
+            <li>3-4 силовых тренировки</li>
+            <li>Фотографируй себя (раз в 2 недели)</li>
+            <li>Взвешивайся 1 раз в неделю (в одно время)</li>
+        </ul>
+    </div>
+
+    <div class="hero-box" style="margin-top: 50px; font-size: 1.1rem;">
+        Помни: Результат = постоянство, а не интенсивность одной тренировки! 💪🔥
+    </div>
+
+    <p style="text-align: center; margin: 40px 0;">
+        <a href="index.html" class="btn btn-primary" style="background: #FF6B9D;">← Начать тренировку</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Популярные программы из YouTube/Instagram</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 { color: #9C27B0; margin-bottom: 30px; text-align: center; }
+        h2 { color: #9C27B0; margin-top: 50px; margin-bottom: 20px; border-bottom: 2px solid #9C27B0; padding-bottom: 10px; }
+        h3 { color: var(--primary); margin-top: 30px; margin-bottom: 15px; }
+        .hero-box {
+            background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        .workout-box {
+            background: var(--bg-card);
+            border: 2px solid #9C27B0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        .workout-box h3 {
+            color: #9C27B0;
+            margin-top: 0;
+        }
+        .info-box {
+            background: rgba(156, 39, 176, 0.1);
+            border-left: 4px solid #9C27B0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .comparison-table {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: rgba(156, 39, 176, 0.2);
+            color: #9C27B0;
+            font-weight: bold;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        .schedule-box {
+            background: var(--bg-card);
+            border: 2px solid #9C27B0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        .schedule-day {
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(156, 39, 176, 0.1);
+            border-left: 4px solid #9C27B0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="btn btn-secondary back-btn">← Назад к приложению</a>
+
+    <h1>🎬 Популярные программы из YouTube/Instagram</h1>
+
+    <div class="hero-box">
+        Тренировки 7-9: Проверенные миллионами схемы из соцсетей
+    </div>
+
+    <h2>📋 Три новые тренировки</h2>
+
+    <div class="workout-box">
+        <h3>Тренировка 7: Upper/Lower Split - Верх (60-70 мин)</h3>
+        <p><strong>Концепция:</strong> Сплит "Верх/Низ" - самая популярная схема в фитнес-ютубе</p>
+
+        <strong>Упражнения:</strong>
+        <ol>
+            <li>Жим штанги в Смите (наклон 30°) - 4×8-12 (верх груди)</li>
+            <li>Тяга вертикального блока (широкий хват) - 4×10-12 (ширина спины)</li>
+            <li>Жим гантелей на плечи - 3×10-12</li>
+            <li>Тяга горизонтального блока - 3×10-12 (толщина спины)</li>
+            <li>Разгибание рук на блоке (канат) - 3×12-15 (трицепс)</li>
+            <li>Сгибание рук со штангой EZ - 3×10-12 (бицепс)</li>
+            <li>Разведение рук в Pec-Deck обратное - 3×15 (задняя дельта)</li>
+        </ol>
+
+        <div class="info-box" style="margin-top: 15px;">
+            <strong>💡 Почему эта схема популярна?</strong><br>
+            Прорабатываешь всю верхнюю часть тела за одну тренировку. Идеальный баланс объема и частоты.
+        </div>
+    </div>
+
+    <div class="workout-box">
+        <h3>Тренировка 8: Upper/Lower Split - Низ (60-70 мин)</h3>
+        <p><strong>Концепция:</strong> День ног в схеме Upper/Lower</p>
+
+        <strong>Упражнения:</strong>
+        <ol>
+            <li>Приседания в Смите (стопы вперед) - 4×8-12 (акцент на ягодицы)</li>
+            <li>Румынская тяга в Смите - 4×10-12 (задняя поверхность бедра)</li>
+            <li>Жим ногами (стопы высоко и широко) - 3×12-15 (ягодицы)</li>
+            <li>Болгарский выпад в Смите - 3×10-12 (каждой ногой)</li>
+            <li>Сгибание ног лежа - 3×12-15</li>
+            <li>Разгибание ног - 3×12-15</li>
+            <li>Поднятие на носки - 4×15-20 (икры)</li>
+        </ol>
+
+        <div class="info-box" style="margin-top: 15px;">
+            <strong>💡 Фишка:</strong><br>
+            Стопы вперед в приседаниях + стопы высоко в жиме = максимум на ягодицы, минимум на квадрицепсы
+        </div>
+    </div>
+
+    <div class="workout-box">
+        <h3>Тренировка 9: Booty Builder 🍑 (55-65 мин)</h3>
+        <p><strong>Концепция:</strong> Популярная инста-программа - максимум на ягодицы</p>
+
+        <strong>Упражнения:</strong>
+        <ol>
+            <li><strong>Ягодичный мостик с паузой вверху (2 сек)</strong> - 4×12-15 (ГЛАВНОЕ!)</li>
+            <li>Отведение ноги в кроссовере стоя - 3×15-20 (каждой ногой, медленно)</li>
+            <li>Жим одной ногой - 3×12-15 (пятка в платформе)</li>
+            <li>Отведение ног в тренажере - 4×15-20 (медленно, чувствуй ягодицы)</li>
+            <li>Сгибание ног с паузой - 3×12-15 (пауза 1 сек вверху)</li>
+            <li>Гиперэкстензия (округлая спина) - 3×15-20 (работают ягодицы, не спина)</li>
+            <li>Ходьба на степпере - 10 минут (финишное кардио - добить ягодицы)</li>
+        </ol>
+
+        <div class="info-box" style="margin-top: 15px;">
+            <strong>💡 Главный секрет Booty Builder:</strong><br>
+            • Паузы в упражнениях (усиливает работу)<br>
+            • Медленное выполнение (связь мозг-мышца)<br>
+            • Только изоляция + малая амплитуда = гореть будут ягодицы!
+        </div>
+    </div>
+
+    <h2>🤔 Upper/Lower Split - что это?</h2>
+
+    <div class="info-box">
+        <p><strong>Upper/Lower Split</strong> - схема тренировок, где ты разделяешь тело на верх и низ.</p>
+
+        <strong>Преимущества:</strong>
+        <ul>
+            <li>✅ Каждая группа мышц тренируется <strong>2 раза в неделю</strong></li>
+            <li>✅ Достаточно восстановления (2-3 дня отдыха)</li>
+            <li>✅ Гибкость - можешь тренироваться 4 или 6 раз в неделю</li>
+            <li>✅ Работает для любой цели (масса, сила, тонус)</li>
+            <li>✅ Сбалансированное развитие всего тела</li>
+        </ul>
+
+        <strong>Почему популярен на YouTube?</strong>
+        <ul>
+            <li>Рекомендуют: Jeff Nippard, Jeremy Ethier, Athlean-X, Stephanie Buttermore</li>
+            <li>Научно обоснован (2× в неделю = оптимум)</li>
+            <li>Универсален - подходит всем</li>
+        </ul>
+    </div>
+
+    <h2>📅 Примеры расписания</h2>
+
+    <div class="schedule-box">
+        <h3>Вариант 1: 4 раза в неделю (классика)</h3>
+        <div class="schedule-day"><strong>Понедельник:</strong> Тренировка 7 (Верх)</div>
+        <div class="schedule-day"><strong>Вторник:</strong> Тренировка 8 (Низ)</div>
+        <div class="schedule-day" style="opacity: 0.5;"><strong>Среда:</strong> Отдых</div>
+        <div class="schedule-day"><strong>Четверг:</strong> Тренировка 7 (Верх)</div>
+        <div class="schedule-day"><strong>Пятница:</strong> Тренировка 8 (Низ)</div>
+        <div class="schedule-day" style="opacity: 0.5;"><strong>Выходные:</strong> Отдых</div>
+    </div>
+
+    <div class="schedule-box">
+        <h3>Вариант 2: С акцентом на ягодицы</h3>
+        <div class="schedule-day"><strong>Понедельник:</strong> Тренировка 7 (Верх)</div>
+        <div class="schedule-day"><strong>Среда:</strong> Тренировка 9 (Booty Builder)</div>
+        <div class="schedule-day"><strong>Пятница:</strong> Тренировка 8 (Низ)</div>
+    </div>
+
+    <div class="schedule-box">
+        <h3>Вариант 3: Микс с жиросжиганием</h3>
+        <div class="schedule-day"><strong>Понедельник:</strong> Тренировка 4 (Верх + жиросжигание)</div>
+        <div class="schedule-day"><strong>Среда:</strong> Тренировка 9 (Booty Builder)</div>
+        <div class="schedule-day"><strong>Пятница:</strong> Тренировка 6 (Круговая)</div>
+    </div>
+
+    <h2>🍑 Booty Builder - популярная инста-программа</h2>
+
+    <div class="info-box">
+        <strong>Откуда взялась?</strong>
+        <p>Популяризирована фитнес-блогерами: Bret Contreras, Sohee Lee, и тысячами инста-тренеров</p>
+
+        <strong>Главные принципы:</strong>
+        <ul>
+            <li><strong>Пауза в верхней точке</strong> - сжимай ягодицы 1-2 секунды</li>
+            <li><strong>Медленное выполнение</strong> - не гонись за весами</li>
+            <li><strong>Связь мозг-мышца</strong> - чувствуй каждое повторение</li>
+            <li><strong>Много изоляции</strong> - прямая работа на ягодицы</li>
+            <li><strong>Никаких приседаний со штангой</strong> - только тренажеры</li>
+        </ul>
+
+        <strong>Для кого?</strong>
+        <ul>
+            <li>✅ Хочешь акцент на ягодицы</li>
+            <li>✅ Не хочешь качать квадрицепсы</li>
+            <li>✅ Любишь тренажеры</li>
+            <li>✅ Уже есть базовая форма, нужна детализация</li>
+        </ul>
+    </div>
+
+    <h2>⚖️ Сравнение программ</h2>
+
+    <div class="comparison-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Параметр</th>
+                    <th>Upper/Lower (7-8)</th>
+                    <th>Booty Builder (9)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Частота</strong></td>
+                    <td>2-4 раза в неделю</td>
+                    <td>1-2 раза в неделю</td>
+                </tr>
+                <tr>
+                    <td><strong>Акцент</strong></td>
+                    <td>Всё тело сбалансировано</td>
+                    <td>Ягодицы максимум</td>
+                </tr>
+                <tr>
+                    <td><strong>Время</strong></td>
+                    <td>60-70 мин</td>
+                    <td>55-65 мин</td>
+                </tr>
+                <tr>
+                    <td><strong>Сложность</strong></td>
+                    <td>Средняя (базовые движения)</td>
+                    <td>Средняя (нужна связь мозг-мышца)</td>
+                </tr>
+                <tr>
+                    <td><strong>Цель</strong></td>
+                    <td>Универсальная программа</td>
+                    <td>Специализация на ягодицы</td>
+                </tr>
+                <tr>
+                    <td><strong>Подходит для</strong></td>
+                    <td>Всех уровней</td>
+                    <td>Средний и выше</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>💡 Советы по выполнению</h2>
+
+    <div class="workout-box">
+        <h3>Для Upper/Lower Split (7-8):</h3>
+        <ul>
+            <li><strong>Веса средние</strong> - не гонись за максимумом</li>
+            <li><strong>Техника важнее</strong> - чувствуй каждое упражнение</li>
+            <li><strong>Отдых 60-90 сек</strong> - не спеши</li>
+            <li><strong>Не пропускай</strong> - программа работает при регулярности</li>
+            <li><strong>Прогрессия постепенная</strong> - +2.5 кг раз в 1-2 недели</li>
+        </ul>
+    </div>
+
+    <div class="workout-box">
+        <h3>Для Booty Builder (9):</h3>
+        <ul>
+            <li><strong>Паузы обязательны</strong> - 1-2 сек сжимай ягодицы вверху</li>
+            <li><strong>Медленно опускай</strong> - негативная фаза 3-4 секунды</li>
+            <li><strong>Чувствуй ягодицы</strong> - если не чувствуешь, снизь вес</li>
+            <li><strong>Не гонись за весами</strong> - важнее качество</li>
+            <li><strong>Гиперэкстензия с округлой спиной</strong> - так работают ягодицы, не поясница</li>
+        </ul>
+    </div>
+
+    <h2>🎯 Какую программу выбрать?</h2>
+
+    <div class="info-box">
+        <strong>Выбери Upper/Lower (7-8) если:</strong>
+        <ul>
+            <li>Хочешь сбалансированное развитие всего тела</li>
+            <li>Нравится тренироваться 4 раза в неделю</li>
+            <li>Цель: масса, сила или общий тонус</li>
+            <li>Новичок или средний уровень</li>
+        </ul>
+
+        <strong>Выбери Booty Builder (9) если:</strong>
+        <ul>
+            <li>Главная цель - красивые ягодицы</li>
+            <li>Не хочешь качать ноги (квадрицепсы)</li>
+            <li>Уже есть базовая форма</li>
+            <li>Нравится медленное, концентрированное выполнение</li>
+        </ul>
+
+        <strong>Совмещай программы если:</strong>
+        <ul>
+            <li>Хочешь лучшее из всех миров</li>
+            <li>Пример: Верх (7) + Booty Builder (9) + Круговая (6)</li>
+        </ul>
+    </div>
+
+    <div class="hero-box" style="margin-top: 50px; font-size: 1.1rem;">
+        Эти программы работают для миллионов - проверь на себе! 🎬💪
+    </div>
+
+    <p style="text-align: center; margin: 40px 0;">
+        <a href="index.html" class="btn btn-primary" style="background: #9C27B0;">← Начать тренировку</a>
+    </p>
+</body>
+</html>

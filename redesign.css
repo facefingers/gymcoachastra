@@ -1,0 +1,223 @@
+
+/* Orange Sport — presentation layer. Original icon and workout data unchanged. */
+:root {
+    --primary: #ff6600; --primary-dark: #ed5b00; --primary-light: #ff852e;
+    --bg-dark: #101113; --bg-card: #191b1e; --surface-raised: #202226;
+    --text: #f4f4f5; --text-secondary: #a0a3aa; --secondary: #a0a3aa;
+    --border: #2d3035; --accent-soft: rgba(255,102,0,.10);
+}
+[data-theme="light"] {
+    --bg-dark: #f3f4f6; --bg-card: #fff; --surface-raised: #edf0f3;
+    --text: #1b1e24; --text-secondary: #606570; --secondary: #606570;
+    --border: #d8dce1; --accent-soft: rgba(255,102,0,.09);
+}
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body.coach-app { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; }
+.coach-app .container { max-width: 1240px; padding: 0 36px 60px; }
+.app-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 25px 0; margin-bottom: 0; text-align: left; border-bottom: 1px solid var(--border); }
+.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.brand img { border-radius: 12px; object-fit: contain; }
+.brand-eyebrow { display: block; font-weight: 850; font-size: 17px; letter-spacing: 1.8px; }
+.app-header h1 { font-size: 11px; color: var(--text-secondary); letter-spacing: .1px; font-weight: 500; margin: 0; }
+.coach-app .header-buttons { flex-wrap: nowrap; gap: 5px; }
+.coach-app .header-buttons .btn { border: 0; font-size: 13px; padding: 10px 14px; color: var(--text-secondary); border-radius: 8px; min-height: 44px; }
+.coach-app .header-buttons .nav-current { color: var(--primary); background: var(--accent-soft); }
+.coach-app .toggles-container { position: static; flex-direction: row; gap: 10px; }
+.coach-app .toggle-group { padding: 0; background: transparent; border: 0; box-shadow: none; gap: 6px; }
+.coach-app .toggle-label { min-width: 28px; font-size: 11px; }
+.coach-app .toggle-switch { width: 34px; height: 44px; }
+.coach-app .toggle-slider { top: 12px; bottom: 12px; }
+.coach-app .toggle-slider:before { width: 14px; height: 14px; }
+.coach-app .toggle-switch input:checked + .toggle-slider:before { transform: translateX(14px); }
+.coach-app .toggle-switch input:focus-visible + .toggle-slider { outline: 2px solid var(--primary); outline-offset: 4px; }
+.coach-app .btn { font-weight: 650; min-height: 44px; border-radius: 9px; transition: background .18s, border-color .18s, transform .18s; }
+.coach-app .btn-primary, .coach-app .btn-success { color: #15100c; }
+.coach-app button:focus-visible, .coach-app [tabindex]:focus-visible, .coach-app input:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+.eyebrow { font-size: 10px; font-weight: 750; letter-spacing: 1.7px; color: var(--text-secondary); }
+.status-dot { display: inline-block; width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: var(--primary); }
+.dashboard-hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: center; padding: 52px 0 38px; }
+.hero-copy .eyebrow { display: flex; gap: 9px; align-items: center; }
+.hero-copy h2 { font-size: clamp(34px, 3.7vw, 52px); font-weight: 800; line-height: 1.12; letter-spacing: -2px; margin: 20px 0 17px; }
+.accent { color: var(--primary); }
+.hero-copy p { max-width: 430px; font-size: 14px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px; }
+#heroStartBtn { font-size: 13px; padding: 13px 22px; gap: 26px; }
+#heroStartBtn span { font-size: 21px; line-height: 1; }
+.hero-caption { color: var(--text-secondary); font-size: 10px; margin-top: 14px; }
+.week-panel { background: var(--bg-card); border: 1px solid var(--border); padding: 25px 28px 20px; border-radius: 16px; position: relative; overflow: hidden; }
+.week-panel::before { content: ""; position: absolute; top: 0; left: 28px; width: 38px; height: 3px; background: var(--primary); }
+.week-heading { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+#weekRange { color: var(--text-secondary); font-size: 11px; }
+.week-total { display: flex; gap: 14px; align-items: center; margin: 14px 0 20px; }
+.week-total strong { font-size: 60px; font-weight: 750; line-height: 1.2; letter-spacing: -3px; }
+.week-total div { font-size: 13px; }
+.week-total small { display: block; color: var(--text-secondary); font-size: 11px; margin-top: 3px; }
+.week-symbol { margin-left: auto; font-size: 34px; color: var(--primary); }
+.week-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; }
+.week-day { text-align: center; font-size: 10px; color: var(--text-secondary); }
+.week-day b { display: flex; align-items: center; justify-content: center; height: 36px; background: var(--surface-raised); border-radius: 7px; font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; border: 1px solid transparent; }
+.week-day.today b { border-color: var(--primary); color: var(--primary); }
+.week-day.trained b { background: var(--primary); color: #101113; }
+.week-footer { display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--border); margin-top: 20px; padding-top: 15px; font-size: 11px; color: var(--text-secondary); }
+.dashboard-metrics { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 0; margin-bottom: 43px; }
+.metric { display: flex; align-items: center; justify-content: center; gap: 15px; border-right: 1px solid var(--border); }
+.metric:last-child { border-right: 0; }
+.metric-icon { display: grid; place-items: center; background: var(--accent-soft); color: var(--primary); width: 39px; height: 39px; border-radius: 10px; font-size: 23px; }
+.metric strong { display: block; font-size: 24px; line-height: 1.1; font-weight: 750; font-variant-numeric: tabular-nums; }
+.metric div > span { display: block; color: var(--text-secondary); font-size: 10px; margin-top: 6px; }
+.programs-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.programs-toolbar h2 { font-size: 25px; letter-spacing: -.7px; margin-top: 5px; font-weight: 750; }
+.program-filters { display: flex; gap: 5px; padding: 4px; border: 1px solid var(--border); border-radius: 10px; }
+.filter { font: inherit; font-size: 12px; font-weight: 600; border: 0; color: var(--text-secondary); background: transparent; padding: 9px 18px; border-radius: 6px; cursor: pointer; min-height: 38px; }
+.filter.active { background: var(--primary); color: #16100c; }
+.coach-app .workout-cards { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; margin-top: 23px; }
+.coach-app .workout-card { display: flex; flex-direction: column; padding: 23px; border-radius: 13px; box-shadow: none; position: relative; overflow: hidden; }
+.coach-app .workout-card[hidden] { display: none; }
+.coach-app .workout-card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: none; }
+.coach-app .workout-header { margin-bottom: 21px; gap: 8px; }
+.coach-app .workout-header h2 { font-size: 10px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+.coach-app .workout-badge { font-size: 10px; white-space: nowrap; padding: 4px 7px; border: 1px solid var(--border); border-radius: 5px; }
+.card-index { font-size: 26px; line-height: 1; color: var(--primary); font-weight: 750; letter-spacing: -1px; margin-bottom: 15px; }
+.coach-app .workout-card h3 { font-size: 19px; line-height: 1.35; font-weight: 700; letter-spacing: -.4px; margin-bottom: 8px; }
+.coach-app .workout-card p { font-size: 12px; line-height: 1.6; margin-bottom: 20px; }
+.coach-app .workout-info { flex-direction: column; gap: 5px; font-size: 11px; margin-top: auto; margin-bottom: 20px; }
+.coach-app .workout-info span::before { content: ""; display: inline-block; width: 4px; height: 4px; background: var(--text-secondary); border-radius: 50%; margin: 0 7px 2px 0; }
+.coach-app .start-btn { background: var(--accent-soft); color: var(--primary); border-color: transparent; font-size: 12px; padding: 11px 15px; justify-content: space-between; }
+.coach-app .start-btn::after { content: "↗"; font-size: 19px; line-height: 1; }
+.coach-app .start-btn:hover { background: var(--primary); color: #16100c; box-shadow: none; transform: none; }
+.mobile-nav { display: none; }
+.session-heading { margin: 32px 0 22px; }
+.session-heading h2 { font-size: 28px; letter-spacing: -.8px; margin-top: 7px; }
+.coach-app .workout-controls { border: 1px solid var(--border); padding: 14px 20px; margin-bottom: 18px; }
+.coach-app #mainTimer { font-family: inherit; font-variant-numeric: tabular-nums; font-size: 28px; letter-spacing: 1px; }
+.session-progress { margin-bottom: 25px; }
+.session-progress > div { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; }
+.session-progress strong { color: var(--text); font-variant-numeric: tabular-nums; }
+.session-progress progress { width: 100%; height: 5px; display: block; border: 0; border-radius: 5px; overflow: hidden; accent-color: var(--primary); background: var(--border); }
+.session-progress progress::-webkit-progress-bar { background: var(--border); }
+.session-progress progress::-webkit-progress-value { background: var(--primary); }
+.session-progress progress::-moz-progress-bar { background: var(--primary); }
+.coach-app .exercise-card { border-radius: 13px; box-shadow: none; }
+.coach-app .exercise-title h3 { color: var(--text); font-size: 20px; }
+.coach-app .exercise-details { font-size: 13px; }
+.coach-app .exercise-card.cardio { background: var(--accent-soft); }
+.coach-app .exercise-note { background: var(--accent-soft); border-color: var(--primary); color: var(--primary-light); }
+.coach-app .exercise-technique { background: var(--surface-raised); }
+.coach-app .sets-grid { grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); }
+.coach-app .set-item { background: var(--bg-dark); border-width: 1px; border-radius: 10px; }
+.coach-app .set-item.completed { background: var(--accent-soft); opacity: 1; }
+.coach-app .set-checkbox { width: 24px; height: 24px; }
+.coach-app .set-label { font-size: 13px; }
+.coach-app .reps-counter { padding: 6px; gap: 8px; border: 0; }
+.coach-app .reps-btn { width: 44px; height: 44px; background: var(--surface-raised); }
+.coach-app .reps-display { font-family: inherit; min-width: 32px; font-variant-numeric: tabular-nums; }
+.coach-app .reps-label { font-size: 11px; }
+.coach-app .exercise-controls .btn { font-size: 11px; }
+.coach-app .rest-timer { top: auto; bottom: 22px; left: auto; right: 24px; background: none; width: min(440px,calc(100% - 32px)); }
+.coach-app .rest-content { width: 100%; max-width: none; padding: 15px 18px; border-radius: 12px; display: grid; grid-template-columns: 1fr auto; gap: 8px 20px; align-items: center; box-shadow: 0 12px 55px #0007; }
+.coach-app .rest-content h3 { font-size: 12px; margin: 0; text-align: left; }
+.coach-app .rest-time { font-family: inherit; font-size: 34px; font-weight: 750; font-variant-numeric: tabular-nums; line-height: 1.1; letter-spacing: 1px; margin: 0; grid-column: 1; text-align: left; }
+.coach-app .rest-buttons { grid-column: 2; grid-row: 1 / 3; gap: 8px; }
+.coach-app .rest-buttons .btn { padding: 10px 12px; font-size: 12px; }
+.coach-app:has(.rest-timer.active) .container { padding-bottom: 140px; }
+.coach-app .screen-header { margin-top: 32px; min-height: 48px; }
+.coach-app .screen-header h2 { font-weight: 750; font-size: 26px; }
+.coach-app .history-item, .coach-app .advice-section, .coach-app .stat-card { border-width: 1px; border-radius: 13px; }
+.coach-app .history-item.empty { padding: 80px 24px; }
+.coach-app .summary-card { background: var(--surface-raised); border-width: 1px; }
+.coach-app .summary-card-value { font-family: inherit; text-shadow: none; }
+.coach-app .summary-card-highlight { box-shadow: none; }
+@media (max-width:1100px) {
+    .coach-app .container { padding-left: 24px; padding-right: 24px; }
+    .app-header { gap: 16px; flex-wrap: wrap; }
+    .brand { flex: 1; }
+    .coach-app .toggles-container { margin-left: auto; }
+    .coach-app .header-buttons { order: 3; width: 100%; justify-content: flex-start; }
+    .dashboard-hero { gap: 30px; }
+    .coach-app .workout-card { padding: 20px; }
+    .coach-app .workout-header { flex-wrap: wrap; }
+}
+@media (max-width:850px) {
+    .coach-app .workout-cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .dashboard-hero { gap: 24px; grid-template-columns: 1.1fr 1fr; }
+    .hero-copy h2 { font-size: 38px; letter-spacing: -1.5px; }
+    .week-panel { padding: 23px 18px 18px; }
+    .hero-copy .eyebrow { font-size: 8px; }
+    .coach-app .exercise-header { flex-wrap: wrap; }
+}
+@media (max-width:600px) {
+    .coach-app .container { padding: 0 18px 110px; }
+    .app-header { padding: 18px 0; gap: 10px; }
+    .brand { gap: 9px; }
+    .brand img { width: 36px; height: 36px; border-radius: 9px; }
+    .brand-eyebrow { font-size: 14px; letter-spacing: 1.4px; }
+    .app-header h1 { font-size: 9px; }
+    .coach-app .header-buttons { display: none; }
+    .coach-app .toggles-container { gap: 8px; }
+    .coach-app .toggle-group { gap: 4px; }
+    .coach-app .toggle-label { font-size: 9px; min-width: 19px; }
+    .dashboard-hero { grid-template-columns: 1fr; gap: 25px; padding: 30px 0 20px; }
+    .hero-copy h2 { font-size: 40px; margin: 17px 0 14px; letter-spacing: -1.6px; }
+    .hero-copy p { font-size: 13px; max-width: 340px; margin-bottom: 19px; }
+    .hero-copy .eyebrow { font-size: 9px; letter-spacing: 1.2px; }
+    #heroStartBtn { width: 100%; justify-content: space-between; padding: 14px 18px; }
+    .hero-caption { text-align: center; font-size: 10px; }
+    .week-panel { padding: 21px 20px 17px; }
+    .week-total { margin: 10px 0 14px; }
+    .week-total strong { font-size: 48px; }
+    .week-day b { height: 34px; }
+    .week-footer { margin-top: 15px; padding-top: 13px; }
+    .dashboard-metrics { padding: 16px 4px; margin-bottom: 30px; }
+    .metric { gap: 0; text-align: center; }
+    .metric-icon { display: none; }
+    .metric strong { font-size: 23px; }
+    .metric div > span { font-size: 9px; max-width: 85px; line-height: 1.4; }
+    .programs-toolbar { align-items: flex-start; gap: 15px; flex-direction: column; }
+    .programs-toolbar h2 { font-size: 25px; }
+    .program-filters { width: 100%; }
+    .filter { flex: 1; min-height: 40px; padding: 8px 10px; }
+    .coach-app .workout-cards { grid-template-columns: 1fr; gap: 14px; margin-top: 18px; }
+    .coach-app .workout-card { padding: 22px; }
+    .coach-app .workout-header { margin-bottom: 15px; flex-wrap: nowrap; }
+    .card-index { font-size: 24px; margin-bottom: 12px; }
+    .coach-app .workout-card h3 { font-size: 21px; }
+    .coach-app .workout-info { flex-direction: row; flex-wrap: wrap; gap: 5px 12px; }
+    .mobile-nav { position: fixed; display: grid; grid-template-columns: repeat(4,1fr); bottom: 0; left: 0; right: 0; background: var(--bg-card); border-top: 1px solid var(--border); padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); z-index: 900; }
+    .mobile-nav button { border: 0; background: transparent; color: var(--text-secondary); display: flex; align-items: center; flex-direction: column; gap: 4px; padding: 5px; font-family: inherit; font-weight: 500; line-height: 1.2; font-size: 10px; cursor: pointer; min-height: 48px; border-radius: 7px; }
+    .mobile-nav button > span:first-child { font-size: 21px; line-height: 1.1; }
+    .mobile-nav button.nav-current { color: var(--primary); background: var(--accent-soft); }
+    .session-heading { margin-top: 25px; }
+    .session-heading h2 { font-size: 24px; }
+    .coach-app .workout-controls { gap: 8px; padding: 12px; flex-wrap: nowrap; }
+    .coach-app .workout-controls .btn { padding: 9px; font-size: 11px; }
+    .coach-app #mainTimer { font-size: 20px; letter-spacing: 0; }
+    .coach-app .timer-label { font-size: 9px; }
+    .coach-app .exercise-card { padding: 17px; }
+    .coach-app .exercise-header { flex-direction: column; gap: 14px; }
+    .coach-app .exercise-title h3 { font-size: 19px; }
+    .coach-app .sets-grid { grid-template-columns: 1fr; }
+    .coach-app .set-item { padding: 12px; }
+    .coach-app .exercise-controls { width: 100%; }
+    .coach-app .rest-timer { bottom: calc(84px + env(safe-area-inset-bottom)); right: 16px; }
+    .coach-app .rest-content { gap: 5px 8px; padding: 13px 15px; }
+    .coach-app:has(.rest-timer.active) .container { padding-bottom: 220px; }
+    .coach-app .screen-header { flex-wrap: wrap; justify-content: flex-start; gap: 14px; padding: 0; }
+    .coach-app .screen-header .back-to-main, .coach-app .screen-header #clearHistoryBtn { position: static; }
+    .coach-app .screen-header h2 { order: -1; flex-basis: 100%; text-align: left; font-size: 26px; }
+}
+@media (max-width:360px) {
+    .coach-app .container { padding-left: 12px; padding-right: 12px; }
+    .hero-copy h2 { font-size: 36px; }
+    .brand-eyebrow { font-size: 12px; }
+    .brand img { width: 30px; height: 30px; }
+    .coach-app .toggle-label { display: none; }
+    .coach-app .rest-buttons .btn { padding: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Keep exercise controls compact at intermediate sizes as well. */
+.coach-app .workout-controls { flex-direction: row; }
+.coach-app .order-score-indicator { padding: 10px 0; margin-bottom: 0; }
+.coach-app .score-text { font-size: 12px; color: var(--text-secondary); }

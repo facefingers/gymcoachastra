@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Руководство: Как увеличивать вес</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 { color: var(--primary); margin-bottom: 30px; }
+        h2 { color: var(--primary); margin-top: 40px; margin-bottom: 20px; }
+        h3 { color: var(--secondary); margin-top: 30px; margin-bottom: 15px; }
+        .rule-box {
+            background: linear-gradient(135deg, var(--primary) 0%, #2E7D32 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        .example-box {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .example-box.good {
+            border-color: var(--success);
+        }
+        .example-box.bad {
+            border-color: var(--danger);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: var(--bg-card);
+            color: var(--primary);
+            font-weight: bold;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="btn btn-secondary back-btn">← Назад к приложению</a>
+
+    <h1>📈 Как увеличивать вес в упражнениях</h1>
+
+    <div class="rule-box">
+        🎯 Если делаешь ВСЕ подходы с МАКСИМАЛЬНЫМ количеством повторений легко → УВЕЛИЧЬ ВЕС
+    </div>
+
+    <h2>✅ Примеры КОГДА увеличивать</h2>
+
+    <div class="example-box good">
+        <h3>✅ Пример 1: Подтягивания в гравитроне</h3>
+        <ul>
+            <li><strong>Цель:</strong> 4 подхода по 8-10 раз</li>
+            <li><strong>Ты сделал:</strong> 10, 10, 10, 10</li>
+            <li><strong>Последний подход:</strong> Легко, мог бы ещё 2-3 раза</li>
+            <li><strong>Действие:</strong> ✅ Уменьши помощь на -2.5 кг (например, с -35 до -32.5)</li>
+        </ul>
+    </div>
+
+    <div class="example-box good">
+        <h3>✅ Пример 2: Жим ногами</h3>
+        <ul>
+            <li><strong>Цель:</strong> 3 подхода по 10-12 раз</li>
+            <li><strong>Ты сделал:</strong> 12, 12, 12</li>
+            <li><strong>Последний подход:</strong> Легко</li>
+            <li><strong>Действие:</strong> ✅ Добавь +10 кг (например, со 120 до 130)</li>
+        </ul>
+    </div>
+
+    <div class="example-box bad">
+        <h3>❌ Пример 3: Бицепс (НЕ увеличивать)</h3>
+        <ul>
+            <li><strong>Цель:</strong> 3 подхода по 8 раз</li>
+            <li><strong>Ты сделал:</strong> 8, 8, 7</li>
+            <li><strong>Последний подход:</strong> Тяжело</li>
+            <li><strong>Действие:</strong> ❌ Продолжай с тем же весом, стремись к 8, 8, 8</li>
+        </ul>
+    </div>
+
+    <h2>📊 На сколько увеличивать вес</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Тип упражнения</th>
+                <th>Примеры</th>
+                <th>Шаг увеличения</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Изоляция</strong></td>
+                <td>Бицепс, дельты, пек-дек, разгибание ног</td>
+                <td><strong>+2.5 кг</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Компаунды верх</strong></td>
+                <td>Подтягивания, жимы, тяги</td>
+                <td><strong>+2.5-5 кг</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Ноги</strong></td>
+                <td>Приседания, жим ногами, мостик</td>
+                <td><strong>+5-10 кг</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>📱 Как использовать в приложении</h2>
+
+    <div class="example-box">
+        <ol style="line-height: 2;">
+            <li><strong>Начни тренировку</strong> → выбери упражнение</li>
+            <li><strong>После каждого подхода:</strong>
+                <ul>
+                    <li>Поставь галочку ✅</li>
+                    <li>Введи количество повторений (например, 10)</li>
+                </ul>
+            </li>
+            <li><strong>После всех подходов:</strong>
+                <ul>
+                    <li>Если все подходы с максимумом → увидишь: "🎉 Пора увеличить вес!"</li>
+                    <li>Нажми кнопку "⚙️ Вес" рядом с упражнением</li>
+                    <li>Введи новый вес</li>
+                </ul>
+            </li>
+            <li><strong>На следующей тренировке</strong> → приложение покажет обновленный вес</li>
+        </ol>
+    </div>
+
+    <h2>🚫 Когда НЕ увеличивать</h2>
+
+    <ul>
+        <li>❌ Техника страдает - появляются рывки, читинг</li>
+        <li>❌ Не можешь сделать целевой минимум (например, меньше 8 раз)</li>
+        <li>❌ Болят суставы или связки</li>
+        <li>❌ Последние подходы даются очень тяжело</li>
+    </ul>
+
+    <h2>💡 Важные советы</h2>
+
+    <div class="example-box">
+        <h3>1. Лучше медленнее, но правильно</h3>
+        <p>Прогресс с правильной техникой > быстрый прогресс с плохой техникой</p>
+
+        <h3>2. Не спеши</h3>
+        <p>Увеличение раз в 1-2 недели - это нормально. Некоторые упражнения прогрессируют медленнее.</p>
+
+        <h3>3. Записывай всё</h3>
+        <p>Вводи фактические повторения в приложении - оно подскажет когда увеличивать вес.</p>
+
+        <h3>4. Техника важнее веса</h3>
+        <p>Медленная негативная фаза (опускание) важнее большого веса.</p>
+    </div>
+
+    <h2>🎯 Почему это важно?</h2>
+
+    <div class="rule-box" style="font-size: 1.1rem;">
+        Тренировки БЕЗ прогрессии весов = хобби, не результат<br><br>
+        Тренировки С прогрессией весов = трансформация тела! 💪
+    </div>
+
+    <p style="text-align: center; margin-top: 40px; color: var(--text-secondary);">
+        <a href="index.html" class="btn btn-primary">← Вернуться к тренировкам</a>
+    </p>
+</body>
+</html>
